@@ -10,9 +10,11 @@ class Orchestrator():
     def run(self, task: str):
         memory = Memory_manager(task)
         plan = self.planner.plan(task)
-        memory.set_plan(plan)
+        memory.set_requirements(plan["requirements"])
+        memory.set_plan(plan["plan"])
 
-        for i, step in enumerate(plan, start = 1):
+
+        for i, step in enumerate(plan["plan"], start = 1):
             context = memory.get_state()
             coder_result = self.coder.generate_code(task, step, context)
             step_record = {

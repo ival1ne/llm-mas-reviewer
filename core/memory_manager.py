@@ -8,7 +8,7 @@ class Memory_manager():
         }
 
     def set_requirements(self, requirements : list[str]):
-        sel.state["requirements"] = requirements
+        self.state["requirements"] = requirements
 
     def set_plan(self, plan: list[str]):
         self.state["plan"] = plan
