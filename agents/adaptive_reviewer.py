@@ -7,17 +7,15 @@ class AdaptiveReviewer:
         self,
         lightweight_threshold: float = 0.58,
         heavy_regenerate_threshold: float = 0.35,
-        low_alignment_threshold: float = 0.5,
-        late_stage_threshold: float = 0.55,
-        mandatory_heavy_stage: float = 0.7,
+        low_alignment_threshold: float = 0.45,
+        penultimate_threshold: float = 0.55,
     ):
         self.lightweight = LightweightReviewer()
         self.heavy = HeavyReviewer()
         self.lightweight_threshold = lightweight_threshold
         self.heavy_regenerate_threshold = heavy_regenerate_threshold
         self.low_alignment_threshold = low_alignment_threshold
-        self.late_stage_threshold = late_stage_threshold
-        self.mandatory_heavy_stage = mandatory_heavy_stage
+        self.penultimate_threshold = penultimate_threshold
 
     def review(self, task: str, step: str, context: dict, candidate_output: dict):
         lightweight_result = self.lightweight.review(task, step, context, candidate_output)
@@ -53,7 +51,9 @@ class AdaptiveReviewer:
         }
 
     def _needs_heavy_review(self, lightweight_result: dict, context: dict) -> bool:
-        if self._is_mandatory_heavy_stage(context):
+        if self._is_final_step(context):
+            return True
+        if self._is_penultimate_step(context) and lightweight_result["score"] <= self.penultimate_threshold:
             return True
         if lightweight_result.get("flag_drift"):
             return True
@@ -61,19 +61,17 @@ class AdaptiveReviewer:
             return True
         if lightweight_result["score"] <= self.low_alignment_threshold:
             return True
-        if self._is_late_stage(context) and lightweight_result["score"] <= self.late_stage_threshold:
-            return True
         return False
 
     def _trigger_reason(self, lightweight_result: dict, context: dict) -> str:
-        if self._is_mandatory_heavy_stage(context):
-            return "mandatory_final_stage_heavy"
+        if self._is_final_step(context):
+            return "mandatory_final_step_heavy"
+        if self._is_penultimate_step(context) and lightweight_result["score"] <= self.penultimate_threshold:
+            return "penultimate_step_low_alignment"
         if lightweight_result.get("flag_drift"):
             return "lightweight_flagged_drift"
         if lightweight_result["score"] <= self.low_alignment_threshold:
             return "lightweight_low_alignment"
-        if self._is_late_stage(context) and lightweight_result["score"] <= self.late_stage_threshold:
-            return "lightweight_late_stage_low_alignment"
         return "lightweight_high_suspicion"
 
     def _merge_results(self, lightweight_result: dict, heavy_result: dict) -> dict:
@@ -101,16 +99,16 @@ class AdaptiveReviewer:
             "recommendation": recommendation,
         }
 
-    def _is_late_stage(self, context: dict) -> bool:
+    def _is_final_step(self, context: dict) -> bool:
         plan_length = len(context.get("plan", []))
         completed_steps = len(context.get("steps", []))
         if not plan_length:
             return False
-        return (completed_steps + 1) / plan_length >= 0.7
+        return completed_steps + 1 == plan_length
 
-    def _is_mandatory_heavy_stage(self, context: dict) -> bool:
+    def _is_penultimate_step(self, context: dict) -> bool:
         plan_length = len(context.get("plan", []))
         completed_steps = len(context.get("steps", []))
-        if not plan_length:
+        if plan_length < 2:
             return False
-        return (completed_steps + 1) / plan_length >= self.mandatory_heavy_stage
+        return completed_steps + 2 == plan_length

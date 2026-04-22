@@ -161,51 +161,51 @@
             "summary": {
                 "reviewer_mode": "adaptive",
                 "tasks_count": 5,
-                "avg_total_seconds": 56.397,
-                "avg_review_seconds": 3.579,
+                "avg_total_seconds": 54.581,
+                "avg_review_seconds": 2.114,
                 "avg_judge_score": 8.3,
-                "adaptive_heavy_trigger_rate": 0.469
+                "adaptive_heavy_trigger_rate": 0.312
             },
             "tasks": [
                 {
                     "task_id": "task_001",
-                    "total_seconds": 44.761,
-                    "review_seconds": 2.772,
+                    "total_seconds": 62.953,
+                    "review_seconds": 2.161,
                     "judge_score": 8.5,
                     "judge_verdict": "good",
-                    "adaptive_heavy_steps": 3
+                    "adaptive_heavy_steps": 2
                 },
                 {
                     "task_id": "task_002",
-                    "total_seconds": 51.812,
-                    "review_seconds": 4.086,
+                    "total_seconds": 53.293,
+                    "review_seconds": 0.941,
                     "judge_score": 8.5,
                     "judge_verdict": "good",
-                    "adaptive_heavy_steps": 4
+                    "adaptive_heavy_steps": 1
                 },
                 {
                     "task_id": "task_003",
-                    "total_seconds": 67.486,
-                    "review_seconds": 6.509,
+                    "total_seconds": 52.724,
+                    "review_seconds": 2.305,
                     "judge_score": 8.5,
                     "judge_verdict": "good",
-                    "adaptive_heavy_steps": 4
+                    "adaptive_heavy_steps": 2
                 },
                 {
                     "task_id": "task_004",
-                    "total_seconds": 52.657,
-                    "review_seconds": 2.397,
+                    "total_seconds": 49.592,
+                    "review_seconds": 2.389,
                     "judge_score": 7.5,
                     "judge_verdict": "good",
                     "adaptive_heavy_steps": 2
                 },
                 {
                     "task_id": "task_005",
-                    "total_seconds": 65.271,
-                    "review_seconds": 2.131,
+                    "total_seconds": 54.342,
+                    "review_seconds": 2.773,
                     "judge_score": 8.5,
                     "judge_verdict": "good",
-                    "adaptive_heavy_steps": 2
+                    "adaptive_heavy_steps": 3
                 }
             ]
         }
