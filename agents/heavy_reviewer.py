@@ -23,9 +23,15 @@ class HeavyReviewer:
             ),
         )
         try:
-            response = call_llm(prompt)
-        except Exception:
-            response = ""
+            response = call_llm(prompt, max_tokens=300, timeout=60)
+        except Exception as exc:
+            return {
+                "reviewer_type": "heavy",
+                "aligned": False,
+                "score": 0.0,
+                "issues": [f"Heavy reviewer failed: {exc}"],
+                "recommendation": "revise",
+            }
 
         try:
             parsed = json.loads(response)

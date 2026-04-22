@@ -4,7 +4,7 @@ import json
 class Planner():
     def plan(self, task: str):
         prompt = planner_prompt(task)
-        response = call_llm(prompt)
+        response = call_llm(prompt, max_tokens=800, timeout=90)
 
         try:
             parsed = json.loads(response)

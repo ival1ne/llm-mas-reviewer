@@ -12,7 +12,7 @@ class LLMJudge:
             result=compact_result_for_judge(result),
         )
         try:
-            response = call_llm(prompt)
+            response = call_llm(prompt, max_tokens=350, timeout=60)
         except Exception as exc:
             return {
                 "score": 0.0,

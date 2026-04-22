@@ -1,0 +1,22 @@
+[
+  {
+    "id": "task_001",
+    "task": "Build a backend for a todo application with JWT authentication, PostgreSQL and CRUD endpoints for tasks."
+  },
+  {
+    "id": "task_002",
+    "task": "Build a FastAPI backend for a note-taking service with PostgreSQL, user registration and login, and CRUD endpoints for notes with ownership checks."
+  },
+  {
+    "id": "task_003",
+    "task": "Build a FastAPI backend for an inventory management system with PostgreSQL, product CRUD, stock update endpoints, and simple role-based access for admin and employee users."
+  },
+  {
+    "id": "task_004",
+    "task": "Build a FastAPI backend for a blog platform with PostgreSQL, JWT authentication, CRUD endpoints for posts, and comment creation and listing endpoints."
+  },
+  {
+    "id": "task_005",
+    "task": "Build a FastAPI backend for an event management system with PostgreSQL, user authentication, event CRUD, and attendee registration endpoints."
+  }
+]

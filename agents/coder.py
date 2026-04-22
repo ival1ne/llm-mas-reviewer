@@ -31,7 +31,7 @@ class Coder():
             step=step,
             context=json.dumps(structured_context, ensure_ascii=False, indent=2)
         )
-        response = call_llm(prompt)
+        response = call_llm(prompt, max_tokens=1400, timeout=120)
         try:
             parsed = json.loads(response)
         except json.JSONDecodeError:

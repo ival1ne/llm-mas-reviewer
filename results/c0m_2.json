@@ -57,49 +57,49 @@
             "summary": {
                 "reviewer_mode": "lightweight",
                 "tasks_count": 5,
-                "avg_total_seconds": 59.591,
-                "avg_review_seconds": 0.008,
-                "avg_judge_score": 7.9,
+                "avg_total_seconds": 53.037,
+                "avg_review_seconds": 0.005,
+                "avg_judge_score": 7.5,
                 "adaptive_heavy_trigger_rate": null
             },
             "tasks": [
                 {
                     "task_id": "task_001",
-                    "total_seconds": 62.397,
-                    "review_seconds": 0.008,
-                    "judge_score": 8.5,
-                    "judge_verdict": "good",
+                    "total_seconds": 47.697,
+                    "review_seconds": 0.005,
+                    "judge_score": 6.5,
+                    "judge_verdict": "fair",
                     "adaptive_heavy_steps": 0
                 },
                 {
                     "task_id": "task_002",
-                    "total_seconds": 55.23,
-                    "review_seconds": 0.007,
-                    "judge_score": 8.5,
+                    "total_seconds": 45.384,
+                    "review_seconds": 0.005,
+                    "judge_score": 7.5,
                     "judge_verdict": "good",
                     "adaptive_heavy_steps": 0
                 },
                 {
                     "task_id": "task_003",
-                    "total_seconds": 70.558,
-                    "review_seconds": 0.011,
+                    "total_seconds": 46.989,
+                    "review_seconds": 0.004,
                     "judge_score": 7.5,
                     "judge_verdict": "good",
                     "adaptive_heavy_steps": 0
                 },
                 {
                     "task_id": "task_004",
-                    "total_seconds": 54.228,
-                    "review_seconds": 0.006,
+                    "total_seconds": 65.23,
+                    "review_seconds": 0.007,
                     "judge_score": 7.5,
                     "judge_verdict": "good",
                     "adaptive_heavy_steps": 0
                 },
                 {
                     "task_id": "task_005",
-                    "total_seconds": 55.543,
-                    "review_seconds": 0.009,
-                    "judge_score": 7.5,
+                    "total_seconds": 59.886,
+                    "review_seconds": 0.005,
+                    "judge_score": 8.5,
                     "judge_verdict": "good",
                     "adaptive_heavy_steps": 0
                 }
@@ -161,51 +161,51 @@
             "summary": {
                 "reviewer_mode": "adaptive",
                 "tasks_count": 5,
-                "avg_total_seconds": 56.397,
-                "avg_review_seconds": 3.579,
-                "avg_judge_score": 8.3,
-                "adaptive_heavy_trigger_rate": 0.469
+                "avg_total_seconds": 51.761,
+                "avg_review_seconds": 1.528,
+                "avg_judge_score": 5.8
+                "adaptive_heavy_trigger_rate": 0.214
             },
             "tasks": [
                 {
                     "task_id": "task_001",
-                    "total_seconds": 44.761,
-                    "review_seconds": 2.772,
-                    "judge_score": 8.5,
+                    "total_seconds": 63.503,
+                    "review_seconds": 2.042,
+                    "judge_score": 7.5,
                     "judge_verdict": "good",
-                    "adaptive_heavy_steps": 3
+                    "adaptive_heavy_steps": 2
                 },
                 {
                     "task_id": "task_002",
-                    "total_seconds": 51.812,
-                    "review_seconds": 4.086,
-                    "judge_score": 8.5,
+                    "total_seconds": 54.585,
+                    "review_seconds": 0.75,
+                    "judge_score": 7.5,
                     "judge_verdict": "good",
-                    "adaptive_heavy_steps": 4
+                    "adaptive_heavy_steps": 1
                 },
                 {
                     "task_id": "task_003",
-                    "total_seconds": 67.486,
-                    "review_seconds": 6.509,
-                    "judge_score": 8.5,
-                    "judge_verdict": "good",
-                    "adaptive_heavy_steps": 4
+                    "total_seconds": 3.191,
+                    "review_seconds": 0.0,
+                    "judge_score": 0.0,
+                    "judge_verdict": "poor",
+                    "adaptive_heavy_steps": 0
                 },
                 {
                     "task_id": "task_004",
-                    "total_seconds": 52.657,
-                    "review_seconds": 2.397,
+                    "total_seconds": 84.214,
+                    "review_seconds": 3.916,
                     "judge_score": 7.5,
                     "judge_verdict": "good",
                     "adaptive_heavy_steps": 2
                 },
                 {
                     "task_id": "task_005",
-                    "total_seconds": 65.271,
-                    "review_seconds": 2.131,
-                    "judge_score": 8.5,
-                    "judge_verdict": "good",
-                    "adaptive_heavy_steps": 2
+                    "total_seconds": 53.314,
+                    "review_seconds": 0.931,
+                    "judge_score": 6.5,
+                    "judge_verdict": "fair",
+                    "adaptive_heavy_steps": 1
                 }
             ]
         }
