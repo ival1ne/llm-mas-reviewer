@@ -1,0 +1,82 @@
+[
+  {
+    "id": "task_001",
+    "task": "Build a backend for a todo application with JWT authentication, PostgreSQL and CRUD endpoints for tasks."
+  },
+  {
+    "id": "task_002",
+    "task": "Build a FastAPI backend for a note-taking service with PostgreSQL, user registration and login, and CRUD endpoints for notes with ownership checks."
+  },
+  {
+    "id": "task_003",
+    "task": "Build a FastAPI backend for an inventory management system with PostgreSQL, product CRUD, stock update endpoints, and simple role-based access for admin and employee users."
+  },
+  {
+    "id": "task_004",
+    "task": "Build a FastAPI backend for a blog platform with PostgreSQL, JWT authentication, CRUD endpoints for posts, and comment creation and listing endpoints."
+  },
+  {
+    "id": "task_005",
+    "task": "Build a FastAPI backend for an event management system with PostgreSQL, user authentication, event CRUD, and attendee registration endpoints."
+  },
+  {
+    "id": "task_006",
+    "task": "Build a FastAPI backend for a habit tracker with PostgreSQL, JWT authentication, CRUD endpoints for habits, and daily completion tracking."
+  },
+  {
+    "id": "task_007",
+    "task": "Build a FastAPI backend for a bookstore service with PostgreSQL, CRUD endpoints for books, author management, and search by title or author."
+  },
+  {
+    "id": "task_008",
+    "task": "Build a FastAPI backend for a task assignment platform with PostgreSQL, user authentication, project CRUD, and task assignment endpoints."
+  },
+  {
+    "id": "task_009",
+    "task": "Build a FastAPI backend for a support ticket system with PostgreSQL, JWT authentication, ticket creation, status updates, and agent assignment endpoints."
+  },
+  {
+    "id": "task_010",
+    "task": "Build a FastAPI backend for a recipe manager with PostgreSQL, user authentication, CRUD endpoints for recipes, and ingredient-based filtering."
+  },
+  {
+    "id": "task_011",
+    "task": "Build a FastAPI backend for a course management system with PostgreSQL, teacher and student authentication, course CRUD, and enrollment endpoints."
+  },
+  {
+    "id": "task_012",
+    "task": "Build a FastAPI backend for an issue tracker with PostgreSQL, JWT authentication, issue CRUD, label management, and issue status transitions."
+  },
+  {
+    "id": "task_013",
+    "task": "Build a FastAPI backend for a movie watchlist application with PostgreSQL, user authentication, CRUD endpoints for watchlists, and movie rating support."
+  },
+  {
+    "id": "task_014",
+    "task": "Build a FastAPI backend for a library management system with PostgreSQL, book CRUD, borrower records, and checkout and return endpoints."
+  },
+  {
+    "id": "task_015",
+    "task": "Build a FastAPI backend for a fitness coaching platform with PostgreSQL, JWT authentication, workout plan CRUD, and progress logging endpoints."
+  },
+  {
+    "id": "task_016",
+    "task": "Build a FastAPI backend for a small CRM with PostgreSQL, user authentication, customer CRUD, and interaction history endpoints."
+  },
+  {
+    "id": "task_017",
+    "task": "Build a FastAPI backend for a hotel booking service with PostgreSQL, room CRUD, reservation endpoints, and availability checks."
+  },
+  {
+    "id": "task_018",
+    "task": "Build a FastAPI backend for a subscription billing dashboard with PostgreSQL, user authentication, plan CRUD, and subscription lifecycle endpoints."
+  },
+  {
+    "id": "task_019",
+    "task": "Build a FastAPI backend for a warehouse transfer system with PostgreSQL, product and warehouse CRUD, and stock transfer endpoints with validation."
+  },
+  {
+    "id": "task_020",
+    "task": "Build a FastAPI backend for a volunteering platform with PostgreSQL, user authentication, opportunity CRUD, and volunteer signup endpoints."
+  }
+]

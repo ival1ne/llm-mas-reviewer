@@ -2,10 +2,14 @@ class Memory_manager():
     def __init__(self, task: str):
         self.state = {
             "task" : task,
+            "reviewer_mode": None,
             "requirements" : [],
             "plan" : [],
             "steps" : []
         }
+
+    def set_reviewer_mode(self, reviewer_mode: str):
+        self.state["reviewer_mode"] = reviewer_mode
 
     def set_requirements(self, requirements : list[str]):
         self.state["requirements"] = requirements

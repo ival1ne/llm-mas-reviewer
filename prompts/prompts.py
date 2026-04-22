@@ -99,3 +99,100 @@ Use exactly this JSON schema:
   "plan": ["string"]
 }}
 """
+
+
+def heavy_reviewer_prompt(
+    task: str,
+    step: str,
+    requirements: str,
+    context: str,
+    candidate_output: str,
+):
+    return f"""
+You are a reviewer agent in a code-generating multi-agent system.
+
+Your role is to check whether the current generation is still aligned with:
+1. the original user task,
+2. the current implementation step,
+3. the extracted requirements,
+4. the decisions made in previous steps.
+
+ORIGINAL TASK:
+{task}
+
+CURRENT STEP:
+{step}
+
+REQUIREMENTS:
+{requirements}
+
+PREVIOUS CONTEXT:
+{context}
+
+CANDIDATE OUTPUT:
+{candidate_output}
+
+REVIEW RULES:
+1. Evaluate only alignment and consistency.
+2. Detect scope drift, contradictions, skipped step intent, or invented functionality.
+3. Be strict about mismatch with the current step.
+4. Return JSON only.
+5. Do not use markdown.
+6. Do not wrap the response in triple backticks.
+7. The first character must be '{{' and the last character must be '}}'.
+
+Use exactly this JSON schema:
+{{
+  "aligned": true,
+  "score": 0.0,
+  "issues": ["string"],
+  "recommendation": "continue"
+}}
+
+FIELD RULES:
+- "aligned" is true only if the candidate output is consistent with the task and current step.
+- "score" is a float from 0 to 1, where 1 means highly aligned.
+- "issues" is a list of short factual issues. If there are no issues, return [].
+- "recommendation" must be one of: "continue", "revise", "regenerate".
+
+Do not explain your reasoning.
+Return JSON only.
+"""
+
+
+def judge_prompt(task: str, result: str):
+    return f"""
+You are an evaluation judge for a code-generating multi-agent system.
+
+Your job is to evaluate the final result for one task.
+
+TASK:
+{task}
+
+FINAL RESULT:
+{result}
+
+JUDGING RULES:
+1. Evaluate task coverage, consistency, correctness plausibility, and completeness.
+2. Penalize scope drift, missing core requirements, contradictions, and vague implementation.
+3. Return JSON only.
+4. Do not use markdown.
+5. Do not wrap the response in triple backticks.
+6. The first character must be '{{' and the last character must be '}}'.
+
+Use exactly this JSON schema:
+{{
+  "score": 0.0,
+  "verdict": "poor",
+  "strengths": ["string"],
+  "weaknesses": ["string"]
+}}
+
+FIELD RULES:
+- "score" is a float from 0 to 10.
+- "verdict" must be one of: "poor", "fair", "good", "excellent".
+- "strengths" is a short list of concrete positives.
+- "weaknesses" is a short list of concrete problems.
+
+Return JSON only.
+"""
